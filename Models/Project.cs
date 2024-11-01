@@ -16,7 +16,7 @@ namespace AonFreelancing.Models
         [AllowNull]
         public string Description { get; set; }
 
-        public int ClientId { get; set; }//FK
+        public long ClientId { get; set; }//FK
 
         // Belongs to a client
         [ForeignKey("ClientId")]

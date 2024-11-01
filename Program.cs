@@ -1,5 +1,7 @@
 
 using AonFreelancing.Contexts;
+using AonFreelancing.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace AonFreelancing
@@ -17,7 +19,9 @@ namespace AonFreelancing
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<MainAppContext>(options => options.UseSqlite("Data Source=aon.db"));
-
+            builder.Services.AddIdentity<User,ApplicationRole>()
+                .AddEntityFrameworkStores<MainAppContext>()
+                .AddDefaultTokenProviders();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -29,6 +33,7 @@ namespace AonFreelancing
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

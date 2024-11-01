@@ -41,8 +41,8 @@ namespace AonFreelancing.Controllers
            
             Freelancer f = new Freelancer();
             f.Name = freelancerDTO.Name;
-            f.Username = freelancerDTO.Username;
-            f.Password = freelancerDTO.Password;
+            f.UserName = freelancerDTO.Username;
+            f.PasswordHash = freelancerDTO.Password;
             f.Skills = freelancerDTO.Skills;
            
             await _mainAppContext.Freelancers.AddAsync(f);

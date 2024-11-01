@@ -18,9 +18,9 @@ namespace AonFreelancing.Models
         public IEnumerable<Project>? Projects { get; set; }
   
 
-        public override void DisplayProfile()
-        {
-            Console.WriteLine($"Client display profile, Company: {CompanyName}");
-        }
+        //public override void DisplayProfile()
+        //{
+        //    Console.WriteLine($"Client display profile, Company: {CompanyName}");
+        //}
     }
 }
